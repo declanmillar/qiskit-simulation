@@ -1,0 +1,98 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "qiskit_simulation"
+authors = [
+    {name = "Declan Millar", email = "declan.millar@ibm.com"},
+]
+maintainers = [
+    {name = "Declan Millar", email = "declan.millar@ibm.com"},
+]
+keywords = [
+    "quantum computing",
+    "quantum information science",
+    "qiskit",
+]
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dynamic = ["version", "description"]
+requires-python = ">=3.8"
+dependencies = [
+    "qiskit >= 1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "tox >= 4.12.1",
+    "pre-commit >= 3.6.1",
+    "commitizen >= 3.14.1",
+]
+test = [
+    "pytest >= 8.0.0",
+    "pytest-cov >= 4.1.0",
+    "pytest-randomly >= 3.15.0",
+]
+lint = [
+    "autoflake >= 2.2.1",
+    "black[jupyter] ~= 24.2.0",
+    "flake8 >= 7.0.0",
+    "isort >= 5.13.2",
+    "mypy >= 1.8.0",
+    "mypy-extensions >= 1.0.0",
+    "pylint >= 3.0.3",
+]
+docs = [
+    "jupyter-sphinx >= 0.5.3",
+    "nbsphinx >= 0.9.3",
+    "reno >= 4.0.0",
+    "sphinx-autodoc-typehints >= 2.0.0",
+]
+notebook = [
+    "notebook >= 7.1.0",
+    "jupyterlab >= 4.1.1",
+    # TEST
+    "nbqa >= 1.7.1",
+    "treon >= 0.1.4",
+    # QISKIT CORE
+    "qiskit[visualization] >= 1.0.0",
+]
+
+[project.urls]
+"Home" = "https://github.com/qiskit_simulation/"
+"Documentation" = "https://github.com/qiskit_simulation/qiskit_simulation/tree/main/docs/"
+"Repository" = "https://github.com/qiskit_simulation/qiskit_simulation/"
+"Download" = "https://pypi.org/project/qiskit_simulation/"
+
+[tool.flit.module]
+name = "qiskit_simulation"
+
+
+############################################################
+## TOOLS
+############################################################
+[tool.black]
+line-length = 100
+exclude = '\.ipynb$'
+extend-exclude = '.*/qiskit/.*'
+
+[tool.autoflake]
+remove-all-unused-imports = true

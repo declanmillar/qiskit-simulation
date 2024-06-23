@@ -1,0 +1,13 @@
+# SOURCE
+docs/
+qiskit_simulation/
+test/
+# SOFTWARE
+.cz.toml
+CITATION.bib
+pyproject.toml
+README.md
+# CI/CD/CT
+.github/CODEOWNERS
+.github/workflows
+tox.ini
