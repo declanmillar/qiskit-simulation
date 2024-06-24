@@ -43,7 +43,7 @@ repos:
     files: .*\.py
 
 - repo: https://github.com/PyCQA/pylint
-  rev: v2.15.4
+  rev: v3.2.3
   hooks:
   - id: pylint
     name: pylint
